@@ -68,10 +68,18 @@ Verify the following before running this demo:
 
 1. Open the aforementioned URL in your web browser.
 
-
 ## To redeploy locally
-`make redeploy`
 
+`make redeploy`
 
 ## To deploy to remote url
 
+`dfx deploy --network=ic`
+
+### checking wallet balance
+
+`dfx identity --network=ic get-wallet`
+
+---
+
+See Makefile for more information.

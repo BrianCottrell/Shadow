@@ -19,11 +19,17 @@ build: node_modules
 install: build
 	dfx canister install --all
 
-.PHONY: redeploy
-.SILENT: redeploy
-redeploy: build
+.PHONY: dev
+.SILENT: dev
+dev: build
 	dfx canister install --all --mode reinstall
-	echo "http://localhost:8000/?canisterId=$(dfx canister id ww)"
+	echo "http://localhost:8000/?canisterId=$(dfx canister id www)"
+
+.PHONY: deploy
+.SILENT: deploy
+deploy: 
+	dfx deploy --network=ic
+
 
 .PHONY: upgrade
 .SILENT: upgrade
