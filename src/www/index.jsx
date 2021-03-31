@@ -2,6 +2,8 @@ import canister from "ic:canisters/shadow";
 import React, { useState, useEffect } from "react";
 import { render } from "react-dom";
 
+const getRoomUrl = (url) => `https://talky.io/${url || "shadow"}`;
+
 const Shadow = () => {
   const [rooms, setRooms] = useState([]);
   const [currentRoom, setCurrentRoom] = useState();
@@ -26,75 +28,64 @@ const Shadow = () => {
 
   const goToRoom = (r) => {
     console.log("set room", r);
-    setCurrentRoom(r);
+    const roomUrl = getRoomUrl(r.url);
+    window.open(roomUrl);
   };
 
   return (
     <div>
       <h1>Shadow | A video platform for aspiring mentors</h1>
 
-      {!currentRoom && (
+      <div>
+        <p>
+          Shadow is an app to help new mentors hone their skills by pairing them
+          with existing mentors in live video sessions.
+        </p>
         <div>
-          <p>
-            Shadow is an app to help new mentors hone their skills by pairing
-            them with existing mentors in live video sessions.
-          </p>
-          <div>
-            Register a new mentoring room
-            <table>
-              <tr>
-                <td>Name:</td>
-                <td>
-                  <input required id="newEntryName"></input>
-                </td>
-              </tr>
-              <tr>
-                <td>Room code:</td>
-                <td>
-                  <input id="newEntryUrl"></input>
-                </td>
-              </tr>
-            </table>
-            <br />
-            <button onClick={() => doInsert()}>Register your room!</button>
-          </div>
+          Register a new mentoring room
+          <table>
+            <tr>
+              <td>Name:</td>
+              <td>
+                <input required id="newEntryName"></input>
+              </td>
+            </tr>
+            <tr>
+              <td>Room code:</td>
+              <td>
+                <input id="newEntryUrl"></input>
+              </td>
+            </tr>
+          </table>
           <br />
+          <button onClick={() => doInsert()}>Register your room!</button>
+        </div>
+        <br />
 
-          <hr />
-          <div>
-            <b>Or find an existing session to shadow:</b>
-            <br />
-            <br />
-            {rooms.map((room, i) => {
-              return (
-                <div
-                  onClick={() => goToRoom(room)}
-                  key={i}
-                  style={{
-                    border: "1px solid black",
-                    fontSize: "16px",
-                    padding: "10px 20px 10px 20px",
-                    width: "400px",
-                    cursor: "pointer",
-                  }}
-                >
-                  <b>{room.name}</b> - /{room.url}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      )}
-      {currentRoom && (
+        <hr />
         <div>
-          <button onClick={() => goToRoom(null)}>Go back</button>
-          <hr />
-          <iframe
-            style={{ height: "80vh", width: "100vw" }}
-            src={`https://talky.io/${currentRoom.url || "shadow"}`}
-          />
+          <b>Or find an existing session to shadow:</b>
+          <br />
+          <br />
+          {rooms.map((room, i) => {
+            return (
+              <div
+                onClick={() => goToRoom(room)}
+                key={i}
+                style={{
+                  border: "1px solid black",
+                  fontSize: "16px",
+                  padding: "10px 20px 10px 20px",
+                  width: "400px",
+                  cursor: "pointer",
+                }}
+              >
+                <b>{room.name}</b> - /{room.url}
+              </div>
+            );
+          })}
         </div>
-      )}
+      </div>
     </div>
   );
 };
