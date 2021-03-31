@@ -83,3 +83,5 @@ Verify the following before running this demo:
 ---
 
 See Makefile for more information.
+
+Demo: https://n4iry-iqaaa-aaaab-qa6sa-cai.ic0.app/
