@@ -16,6 +16,7 @@
   "name": "shadow",
   "scripts": {
     "build": "webpack",
+    "build:prod": "webpack --mode=production",
     "start": "webpack-dev-server & open http://localhost:8080/"
   },
   "version": "0.1.0"
