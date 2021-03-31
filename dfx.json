@@ -1,0 +1,15 @@
+{
+  "canisters": {
+    "shadow": {
+      "main": "src/shadow/Main.mo"
+    },
+    "www": {
+      "frontend": {
+        "entrypoint": "src/www/index.jsx"
+      },
+      "dependencies": ["shadow"],
+      "type": "assets"
+    }
+  },
+  "dfx": "0.6.26"
+}

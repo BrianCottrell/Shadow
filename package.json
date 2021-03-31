@@ -1,0 +1,22 @@
+{
+  "description": "",
+  "dependencies": {
+    "@dfinity/agent": "0.6.20",
+    "css-loader": "^5.2.0",
+    "file-loader": "^6.2.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "style-loader": "^2.0.0",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.5",
+    "webpack": "4.41.3",
+    "webpack-cli": "3.3.10"
+  },
+  "keywords": [],
+  "name": "shadow",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server & open http://localhost:8080/"
+  },
+  "version": "0.1.0"
+}
