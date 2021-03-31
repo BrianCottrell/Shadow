@@ -35,16 +35,13 @@ const Shadow = () => {
   };
 
   return (
-    <div style="
-      text-align: center;
-      font-family: Arial, Helvetica, sans-serif;
-      color: rgb(68, 68, 68);
-    ">
-      <img src="https://res.cloudinary.com/dhl3gjazr/image/upload/v1617234571/shadow/shadow3.png">
+    <div style="text-align: center; font-family: Arial, Helvetica, sans-serif;color: rgb(68, 68, 68);">
+      <img src="https://res.cloudinary.com/dhl3gjazr/image/upload/v1617234571/shadow/shadow3.png" />
       <h1>Shadow | A video platform for aspiring mentors</h1>
       <div>
         <p>
-          Shadow is an app to help new mentors hone their skills by observing existing mentors during live video sessions.
+          Shadow is an app to help new mentors hone their skills by observing
+          existing mentors during live video sessions.
         </p>
         <br />
         <div>
@@ -65,9 +62,17 @@ const Shadow = () => {
                   margin: "auto",
                 }}
               >
-                <img src="https://res.cloudinary.com/dhl3gjazr/image/upload/v1617232918/shadow/shadow4.png" style="position: absolute;">
-                <span style="position: absolute; font-size: 15px; padding: 6px;">12</span>
-                <b style={{color: "rgb(0, 176, 235)", marginLeft: "50px"}}>{room.name}</b> - /{room.url}
+                <img
+                  src="https://res.cloudinary.com/dhl3gjazr/image/upload/v1617232918/shadow/shadow4.png"
+                  style="position: absolute;"
+                />
+                <span style="position: absolute; font-size: 15px; padding: 6px;">
+                  12
+                </span>
+                <b style={{ color: "rgb(0, 176, 235)", marginLeft: "50px" }}>
+                  {room.name}
+                </b>{" "}
+                - /{room.url}
               </div>
             );
           })}
