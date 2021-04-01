@@ -4,6 +4,7 @@ module Types {
     id: Nat;
     name: Text;
     url: Text;
+    upvotes: Nat;
   };
 
   

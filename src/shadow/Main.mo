@@ -9,7 +9,7 @@ actor Assistant {
   var nextId : Nat = 1;
   var rooms : [Room] = [];
 
-    public query func getRooms() : async [Room] {
+  public query func getRooms() : async [Room] {
     return rooms;
   };
 
@@ -18,11 +18,13 @@ actor Assistant {
     nextId += 1;
   };
 
-    public func clearRooms() : async () {
+  public func clearRooms() : async () {
     rooms := [];
     nextId -= (nextId-1);
   };
 
-
+  public func upvote(id : Nat) : async () {
+    rooms := Utils.upvoteRoom(rooms, id)
+  };
 
 };
