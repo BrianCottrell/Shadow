@@ -45,7 +45,13 @@ const Shadow = () => {
   };
 
   return (
-    <div style="text-align: center; font-family: Arial, Helvetica, sans-serif;color: rgb(68, 68, 68);">
+    <div
+      style={{
+        textAlign: "center",
+        fontFamily: "Arial, Helvetica, sans-serif",
+        color: "rgb(68, 68, 68)",
+      }}
+    >
       <img src="https://res.cloudinary.com/dhl3gjazr/image/upload/v1617234571/shadow/shadow3.png" />
       <h1>Shadow | A video platform for aspiring mentors</h1>
       <div>
@@ -75,9 +81,15 @@ const Shadow = () => {
                 <img
                   onClick={() => upvote(room.id)}
                   src="https://res.cloudinary.com/dhl3gjazr/image/upload/v1617232918/shadow/shadow4.png"
-                  style="position: absolute;"
+                  style={{ position: "absolute" }}
                 />
-                <span style="position: absolute; font-size: 15px; padding: 6px;">
+                <span
+                  style={{
+                    position: "absolute",
+                    fontSize: "15px",
+                    padding: "6px",
+                  }}
+                >
                   {room.upvotes || 0}
                 </span>
                 <b style={{ color: "rgb(0, 176, 235)", marginLeft: "50px" }}>
@@ -88,10 +100,10 @@ const Shadow = () => {
             );
           })}
         </div>
-        <hr style="width: 800px" />
+        <hr style={{ width: "800px" }} />
         <div>
           Register a new mentoring room
-          <table style="margin: auto;">
+          <table style={{ margin: "auto" }}>
             <tr>
               <td>Name:</td>
               <td>
