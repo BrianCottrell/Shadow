@@ -83,14 +83,16 @@ const Shadow = () => {
                   src="https://res.cloudinary.com/dhl3gjazr/image/upload/v1617232918/shadow/shadow4.png"
                   style={{ position: "absolute" }}
                 />
+                {/* TODO: variable padding */}
                 <span
                   style={{
                     position: "absolute",
                     fontSize: "15px",
-                    padding: "6px",
+                    paddingTop: "7px",
+                    paddingLeft: "10px",
                   }}
                 >
-                  {room.upvotes || 0}
+                  {(room.upvotes && room.upvotes.toNumber()) || 0}
                 </span>
                 <b style={{ color: "rgb(0, 176, 235)", marginLeft: "50px" }}>
                   {room.name}

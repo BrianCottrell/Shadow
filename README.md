@@ -74,15 +74,11 @@ Verify the following before running this demo:
 
 `make dev`
 
-## Deployment
+## redeploy/deploy
 
 `make deploy`
 
 <img src="./img/deploy.png" width=600/>
-
-### To redeploy
-
-`make redeploy`
 
 ## To deploy to remote url
 
