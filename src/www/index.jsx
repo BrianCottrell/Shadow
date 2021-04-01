@@ -13,8 +13,18 @@ const Shadow = () => {
   const getRooms = () => {
     canister.getRooms().then((result) => {
       console.log("rooms", result);
+      result.sort((a, b) => b.upvotes - a.upvotes); // sort desc.
       setRooms(result);
     });
+  };
+
+  const upvote = async (roomId) => {
+    try {
+      await canister.upvote(roomId);
+    } catch (e) {
+      console.error("error upvoting", roomId, e);
+    }
+    getRooms();
   };
 
   useEffect(() => {
@@ -63,11 +73,12 @@ const Shadow = () => {
                 }}
               >
                 <img
+                  onClick={() => upvote(room.id)}
                   src="https://res.cloudinary.com/dhl3gjazr/image/upload/v1617232918/shadow/shadow4.png"
                   style="position: absolute;"
                 />
                 <span style="position: absolute; font-size: 15px; padding: 6px;">
-                  12
+                  {room.upvotes || 0}
                 </span>
                 <b style={{ color: "rgb(0, 176, 235)", marginLeft: "50px" }}>
                   {room.name}
