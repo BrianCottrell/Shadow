@@ -19,6 +19,7 @@ const Shadow = () => {
   };
 
   const upvote = async (roomId) => {
+    console.log("upvote", roomId);
     try {
       await canister.upvote(roomId);
     } catch (e) {
@@ -67,37 +68,44 @@ const Shadow = () => {
           {rooms.map((room, i) => {
             return (
               <div
-                onClick={() => goToRoom(room)}
                 key={i}
                 style={{
                   border: "1px solid rgb(0, 176, 235)",
                   fontSize: "16px",
                   padding: "10px 20px 10px 20px",
                   width: "800px",
-                  cursor: "pointer",
                   margin: "auto",
                 }}
               >
-                <img
-                  onClick={() => upvote(room.id)}
-                  src="https://res.cloudinary.com/dhl3gjazr/image/upload/v1617232918/shadow/shadow4.png"
-                  style={{ position: "absolute" }}
-                />
-                {/* TODO: variable padding */}
                 <span
-                  style={{
-                    position: "absolute",
-                    fontSize: "15px",
-                    paddingTop: "7px",
-                    paddingLeft: "10px",
-                  }}
+                  style={{ cursor: "pointer" }}
+                  onClick={() => upvote(room.id)}
                 >
-                  {(room.upvotes && room.upvotes.toNumber()) || 0}
+                  <img
+                    src="https://res.cloudinary.com/dhl3gjazr/image/upload/v1617232918/shadow/shadow4.png"
+                    style={{ position: "absolute" }}
+                  />
+                  {/* TODO: variable padding */}
+                  <span
+                    style={{
+                      position: "absolute",
+                      fontSize: "15px",
+                      paddingTop: "7px",
+                      paddingLeft: "10px",
+                    }}
+                  >
+                    {(room.upvotes && room.upvotes.toNumber()) || 0}
+                  </span>
                 </span>
-                <b style={{ color: "rgb(0, 176, 235)", marginLeft: "50px" }}>
-                  {room.name}
-                </b>{" "}
-                - /{room.url}
+                <span
+                  style={{ cursor: "pointer" }}
+                  onClick={() => goToRoom(room)}
+                >
+                  <b style={{ color: "rgb(0, 176, 235)", marginLeft: "50px" }}>
+                    {room.name}
+                  </b>{" "}
+                  - /{room.url}
+                </span>
               </div>
             );
           })}
