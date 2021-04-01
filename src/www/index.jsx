@@ -74,6 +74,7 @@ const Shadow = () => {
                   fontSize: "16px",
                   padding: "10px 20px 10px 20px",
                   width: "800px",
+                  lineHeight: "30px",
                   margin: "auto",
                 }}
               >
@@ -90,7 +91,6 @@ const Shadow = () => {
                     style={{
                       position: "absolute",
                       fontSize: "15px",
-                      paddingTop: "7px",
                       paddingLeft: "10px",
                     }}
                   >
@@ -98,7 +98,7 @@ const Shadow = () => {
                   </span>
                 </span>
                 <span
-                  style={{ cursor: "pointer" }}
+                  style={{ cursor: "pointer", lineHeight: "30px" }}
                   onClick={() => goToRoom(room)}
                 >
                   <b style={{ color: "rgb(0, 176, 235)", marginLeft: "50px" }}>
