@@ -2,8 +2,6 @@ import canister from "ic:canisters/shadow";
 import React, { useState, useEffect } from "react";
 import { render } from "react-dom";
 
-// import "./index.css";
-
 const getRoomUrl = (url) => `https://talky.io/${url || "shadow"}`;
 
 const Shadow = () => {
